@@ -2,11 +2,13 @@
     "jobs": [
         {
             "id": "1",
-            "title": "My Job"
+            "title": "My Job",
+            "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi illo, inventore deleniti quia quis necessitatibus consequatur error fuga esse neque ab! Officiis inventore consectetur maxime eos, a, sed ut autem omnis esse adipisci numquam dolorem temporibus illum alias minus iusto molestias laboriosam? Exercitationem consequatur nemo porro, eaque corporis fugit placeat culpa, doloribus numquam aspernatur, reprehenderit neque."
         },
         {
             "id": "2",
-            "title": "My Job 2"
+            "title": "My Job 2",
+            "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi illo, inventore deleniti quia quis necessitatibus consequatur error fuga esse neque ab! Officiis inventore consectetur maxime eos, a, sed ut autem omnis esse adipisci numquam dolorem temporibus illum alias minus iusto molestias laboriosam? Exercitationem consequatur nemo porro, eaque corporis fugit placeat culpa, doloribus numquam aspernatur, reprehenderit neque."
         }
     ]
 }

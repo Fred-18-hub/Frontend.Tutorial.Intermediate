@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
 import JobsView from '@/views/jobs/JobsView.vue';
-import JobDetailsView from '@/views/jobs/JobDetailsView.vue';
 import NotFoundView from '@/views/NotFoundView.vue';
+import JobMessage from '@/components/JobMessage.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,15 +23,21 @@ const router = createRouter({
     {
       path: "/jobs",
       name: "jobs",
-      component: JobsView
+      component: JobsView,
+      children: [
+        {
+          path: "",
+          component: JobMessage,
+        },
+        {
+          path: ":id",
+          name: "jobDetails",
+          component: () => import('@/views/jobs/JobDetailsView.vue'),
+          props: true
+        },
+      ]
     },
-    // Route parameters
-    {
-      path: "/jobs/:id", // :id is a route parameter which can accept values of any type
-      name: "jobDetails",
-      component: JobDetailsView,
-      props: true // this route parameters to be accepted as props in the component
-    },
+    
     // Redirect
     {
       path: "/all-jobs",  // old/non-existing route to be redirected

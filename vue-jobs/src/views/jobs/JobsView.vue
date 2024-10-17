@@ -6,6 +6,7 @@
                 <h2>{{ job.title }}</h2>
             </RouterLink>
         </div>
+        <RouterView />
     </div>
     <div v-else>Loading jobs...</div>
 </template>

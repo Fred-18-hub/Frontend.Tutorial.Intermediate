@@ -1,3 +1,18 @@
+<template>
+  <nav>
+    <RouterLink to="/">Home</RouterLink> |
+    <RouterLink :to="{ name: 'about' }">About</RouterLink> |
+    <RouterLink to="/jobs">Jobs</RouterLink>
+  </nav>
+
+  <!-- Programmatic Navigation -->
+  <button @click="redirect">Redirect</button>
+  <button @click="back">Back</button>
+  <button @click="forward">Forward</button>
+
+  <RouterView />
+</template>
+
 <script setup lang="ts">
 import { RouterLink, RouterView, useRouter } from 'vue-router'
 
@@ -15,21 +30,6 @@ function forward() {
   router.forward();
 }
 </script>
-
-<template>
-  <nav>
-    <RouterLink to="/">Home</RouterLink> |
-    <RouterLink :to="{ name: 'about' }">About</RouterLink> |
-    <RouterLink :to="{ name: 'jobs' }">Jobs</RouterLink>
-  </nav>
-
-  <!-- Programmatic Navigation -->
-  <button @click="redirect">Redirect</button>
-  <button @click="back">Back</button>
-  <button @click="forward">Forward</button>
-
-  <RouterView />
-</template>
 
 <style>
 #app {
