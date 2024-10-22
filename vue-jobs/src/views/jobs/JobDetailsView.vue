@@ -12,6 +12,7 @@
 
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue';
+import { onBeforeRouteUpdate } from 'vue-router';
 
 const props = defineProps({
     id: { type: String, required: true }
@@ -23,6 +24,13 @@ watchEffect(() => {
         .then(response => response.json())
         .then(data => job.value = data)
         .catch(error => error.message)
+});
+
+// Navigation Guard
+onBeforeRouteUpdate((to, from) => {
+    job.value = null;
+    console.log("before route update");
+    
 });
 </script>
 

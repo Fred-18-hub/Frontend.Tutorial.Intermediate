@@ -13,6 +13,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
+import { onBeforeRouteLeave } from 'vue-router';
 
 const jobs = ref<{ id: string, title: string }[]>([]);
 
@@ -20,7 +21,13 @@ onMounted(() => {
     fetch("http://localhost:3000/jobs")
         .then(response => response.json())
         .then(data => jobs.value = data)
-        .catch(error => error.message)
+        .catch(error => error.message);
+});
+
+// Navigation Guard
+onBeforeRouteLeave((to, from) => {
+    jobs.value = [];
+    console.log("before route leave");
 });
 </script>
 

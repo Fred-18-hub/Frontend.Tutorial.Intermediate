@@ -2,7 +2,7 @@
   <nav>
     <RouterLink to="/">Home</RouterLink> |
     <RouterLink :to="{ name: 'about' }">About</RouterLink> |
-    <RouterLink to="/jobs">Jobs</RouterLink>
+    <RouterLink :to="{ name: 'jobs' }">Jobs</RouterLink>
   </nav>
 
   <!-- Programmatic Navigation -->
